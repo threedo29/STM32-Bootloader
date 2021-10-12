@@ -3,6 +3,4 @@
 
 #include "common.h"
 
-void bsp_init(void);
-
-#endif /* __BSP_H__ */
+#endif

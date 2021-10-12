@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    hw_init();
-    app_init();
+    chip_config();
+    peripheral_init();
 
     app_main();
 }
