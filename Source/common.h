@@ -11,4 +11,6 @@
 #include "stm32f10x.h"
 #include "stm32f10x_conf.h"
 
+#include "delay.h"
+
 #endif /* __COMMON_H__ */

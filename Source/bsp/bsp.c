@@ -1,6 +1,6 @@
 #include "bsp.h"
 
-void chip_config(void)
+void board_config(void)
 {
     SystemInit();
     SystemCoreClockUpdate();

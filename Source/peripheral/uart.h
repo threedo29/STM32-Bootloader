@@ -29,6 +29,10 @@
 
 void uart_config(void);
 void uart1_config(void);
-void usart_send_hex(USART_TypeDef* usart, u8 data);
+void uart_send_hex(USART_TypeDef* uart, u8 data);
+void uart_send_char(USART_TypeDef* uart, char data);
+void uart_send_str(USART_TypeDef* uart, char *buffer);
+void uart_send_int(USART_TypeDef* uart, u16 num);
+u16 uart_receive(USART_TypeDef* uart);
 
 #endif /* __UART_H__ */

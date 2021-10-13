@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    chip_config();
+    board_config();
     peripheral_init();
 
     app_main();

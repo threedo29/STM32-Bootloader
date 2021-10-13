@@ -21,7 +21,7 @@ void uart1_config(void)
 {
     GPIO_InitTypeDef gpio_init_structure;
     USART_InitTypeDef usart_init_structure;
-    NVIC_InitTypeDef nvic_init_structure;
+    // NVIC_InitTypeDef nvic_init_structure;
 
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1 | RCC_APB2Periph_AFIO, ENABLE);
 
@@ -46,11 +46,50 @@ void uart1_config(void)
 
     // USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
 }
+#endif
 
-void usart_send_hex(USART_TypeDef* usart, u8 data)
+void uart_send_hex(USART_TypeDef* uart, u8 data)
 {
-    usart->DR = data;
-    while (!(usart->SR & USART_SR_TC));
+    uart->DR = (data & (u16)0x01FF);
+    while (!(uart->SR & USART_SR_TC));
 }
 
-#endif
+void uart_send_char(USART_TypeDef* uart, char data)
+{
+    uart->DR = (data & (u16)0x01FF);
+    while (!(uart->SR & USART_FLAG_TXE));
+}
+
+void uart_send_str(USART_TypeDef* uart, char* buffer)
+{
+    while (*buffer != '\0')
+    {
+        uart_send_char(uart, *buffer);
+        buffer++;
+    }
+}
+
+void uart_send_int(USART_TypeDef* uart, u16 num)
+{
+    char str[10];
+    u16 i = 0;
+
+    do
+    {
+        str[i++] = (num % 10) + '0';
+    } while ((num /= 10) > 0);
+
+    while (i)
+    {
+        uart_send_char(uart, str[--i]);
+    }
+}
+
+u16 uart_receive(USART_TypeDef* uart)
+{
+    u16 result = 0;
+    while ((uart->SR & USART_FLAG_RXNE) == (u16)RESET);
+    result = (u16)(uart->DR & (u16)0x01FF);
+
+    return result;
+}
