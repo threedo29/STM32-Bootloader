@@ -350,13 +350,14 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
+                    <state>$PROJ_DIR$\..\Library</state>
                     <state>$PROJ_DIR$\..\Library\CMSIS</state>
                     <state>$PROJ_DIR$\..\Library\SPL\inc</state>
                     <state>$PROJ_DIR$\..\Library\SPL\src</state>
-                    <state>$PROJ_DIR$\..\Source\application</state>
-                    <state>$PROJ_DIR$\..\Source\bsp</state>
-                    <state>$PROJ_DIR$\..\Source\common</state>
-                    <state>$PROJ_DIR$\..\Source\hardware</state>
+                    <state>$PROJ_DIR$\..\Source</state>
+                    <state>$PROJ_DIR$\..\Source\app</state>
+                    <state>$PROJ_DIR$\..\Source\hw</state>
+                    <state>$PROJ_DIR$\..\Source\hw\module</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -648,7 +649,7 @@
                 <option>
                     <name>OOCOutputFormat</name>
                     <version>3</version>
-                    <state>0</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>OCOutputOverride</name>
@@ -656,7 +657,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state></state>
+                    <state>STM32_Bootloader.bin</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -664,7 +665,7 @@
                 </option>
                 <option>
                     <name>OOCObjCopyEnable</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
             </data>
         </settings>
@@ -771,11 +772,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\ST\stm32f103xE.icf</state>
+                    <state>$PROJ_DIR$\stm32f103xE.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -2118,13 +2119,7 @@
                 <name>$PROJ_DIR$\..\Library\CMSIS\startup_stm32f10x_hd.s</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Library\CMSIS\stm32f10x.h</name>
-            </file>
-            <file>
                 <name>$PROJ_DIR$\..\Library\CMSIS\system_stm32f10x.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Library\CMSIS\system_stm32f10x.h</name>
             </file>
         </group>
         <group>
@@ -2281,47 +2276,50 @@
     <group>
         <name>Source</name>
         <group>
-            <name>application</name>
+            <name>app</name>
             <file>
-                <name>$PROJ_DIR$\..\Source\application\app.c</name>
+                <name>$PROJ_DIR$\..\Source\app\app.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Source\application\app.h</name>
-            </file>
-        </group>
-        <group>
-            <name>bsp</name>
-            <file>
-                <name>$PROJ_DIR$\..\Source\bsp\bsp.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Source\bsp\bsp.h</name>
+                <name>$PROJ_DIR$\..\Source\app\app.h</name>
             </file>
         </group>
         <group>
-            <name>common</name>
+            <name>hw</name>
             <group>
-                <name>hardware</name>
+                <name>module</name>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\fsmc.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\fsmc.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\hw_common.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\uart.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\uart.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\watchdog.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\watchdog.h</name>
+                </file>
             </group>
             <file>
-                <name>$PROJ_DIR$\..\Source\common\common.h</name>
+                <name>$PROJ_DIR$\..\Source\hw\hw.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Source\hw\hw.h</name>
             </file>
         </group>
-        <group>
-            <name>hardware</name>
-            <group>
-                <name>driver</name>
-            </group>
-            <file>
-                <name>$PROJ_DIR$\..\Source\hardware\hw.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Source\hardware\hw.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Source\hardware\hw_common.h</name>
-            </file>
-        </group>
+        <file>
+            <name>$PROJ_DIR$\..\Source\common.h</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\..\Source\main.c</name>
         </file>

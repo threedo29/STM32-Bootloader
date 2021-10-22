@@ -2379,13 +2379,7 @@
                 <name>$PROJ_DIR$\..\Library\CMSIS\startup_stm32f10x_hd.s</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Library\CMSIS\stm32f10x.h</name>
-            </file>
-            <file>
                 <name>$PROJ_DIR$\..\Library\CMSIS\system_stm32f10x.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Library\CMSIS\system_stm32f10x.h</name>
             </file>
         </group>
         <group>
@@ -2542,47 +2536,50 @@
     <group>
         <name>Source</name>
         <group>
-            <name>application</name>
+            <name>app</name>
             <file>
-                <name>$PROJ_DIR$\..\Source\application\app.c</name>
+                <name>$PROJ_DIR$\..\Source\app\app.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\Source\application\app.h</name>
-            </file>
-        </group>
-        <group>
-            <name>bsp</name>
-            <file>
-                <name>$PROJ_DIR$\..\Source\bsp\bsp.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Source\bsp\bsp.h</name>
+                <name>$PROJ_DIR$\..\Source\app\app.h</name>
             </file>
         </group>
         <group>
-            <name>common</name>
+            <name>hw</name>
             <group>
-                <name>hardware</name>
+                <name>module</name>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\fsmc.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\fsmc.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\hw_common.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\uart.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\uart.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\watchdog.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Source\hw\module\watchdog.h</name>
+                </file>
             </group>
             <file>
-                <name>$PROJ_DIR$\..\Source\common\common.h</name>
+                <name>$PROJ_DIR$\..\Source\hw\hw.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Source\hw\hw.h</name>
             </file>
         </group>
-        <group>
-            <name>hardware</name>
-            <group>
-                <name>driver</name>
-            </group>
-            <file>
-                <name>$PROJ_DIR$\..\Source\hardware\hw.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Source\hardware\hw.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Source\hardware\hw_common.h</name>
-            </file>
-        </group>
+        <file>
+            <name>$PROJ_DIR$\..\Source\common.h</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\..\Source\main.c</name>
         </file>
