@@ -6,6 +6,8 @@ void hw_init(void)
     board_init();
 
     /* Module */
+    watchdog_init();
+    timer_init();
 }
 
 void board_init(void)
