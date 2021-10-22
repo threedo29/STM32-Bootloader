@@ -4,10 +4,12 @@
 #include "hw_common.h"
 
 /* Module Include */
+#include "delay.h"
 #include "watchdog.h"
 #include "timer.h"
+#include "uart.h"
 
 void hw_init(void);
-void board_init(void);
+static void board_init(void);
 
 #endif /* __HW_H__ */

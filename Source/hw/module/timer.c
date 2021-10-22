@@ -5,7 +5,7 @@ void timer_init(void)
     timer2_init();
 }
 
-void timer2_init(void)
+static void timer2_init(void)
 {
     TIM_TimeBaseInitTypeDef tim_time_base_structure;
     
@@ -22,7 +22,7 @@ void timer2_init(void)
     TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
 }
 
-void timer2_nvic_init(void)
+static void timer2_nvic_init(void)
 {
     NVIC_InitTypeDef nvic_init_structure;
 

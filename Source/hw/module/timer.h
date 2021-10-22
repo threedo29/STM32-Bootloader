@@ -4,7 +4,7 @@
 #include "hw_common.h"
 
 void timer_init(void);
-void timer2_init(void);
-void timer2_nvic_init(void);
+static void timer2_init(void);
+static void timer2_nvic_init(void);
 
 #endif /* __TIMER_H__ */

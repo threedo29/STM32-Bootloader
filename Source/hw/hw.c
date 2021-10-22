@@ -8,9 +8,10 @@ void hw_init(void)
     /* Module */
     watchdog_init();
     timer_init();
+    uart_init();
 }
 
-void board_init(void)
+static void board_init(void)
 {
     /* Clock Configuration */
     SystemInit();
