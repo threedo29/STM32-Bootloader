@@ -13,5 +13,6 @@ static void uart1_gpio_init(void);
 void uart_send_hex(USART_TypeDef* uart, u8 data);
 void uart_send_char(USART_TypeDef* uart, char data);
 void uart_send_str(USART_TypeDef* uart, char* buffer);
+void uart_send_int(USART_TypeDef* uart, u16 num);
 
 #endif /* __UART_H__ */

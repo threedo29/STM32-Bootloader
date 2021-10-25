@@ -8,6 +8,7 @@
 #include "watchdog.h"
 #include "timer.h"
 #include "uart.h"
+#include "boot_switch.h"
 
 void hw_init(void);
 static void board_init(void);

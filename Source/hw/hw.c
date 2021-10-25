@@ -9,6 +9,7 @@ void hw_init(void)
     watchdog_init();
     timer_init();
     uart_init();
+    boot_switch_init();
 }
 
 static void board_init(void)

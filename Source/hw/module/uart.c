@@ -36,13 +36,13 @@ static void uart1_gpio_init(void)
 
 void uart_send_hex(USART_TypeDef* uart, u8 data)
 {
-    uart->DR = data;
+    uart->DR = (data & (u16)0x01FF);
     while ((uart->SR & USART_SR_TXE) == RESET);
 }
 
 void uart_send_char(USART_TypeDef* uart, char data)
 {
-    uart->DR = data;
+    uart->DR = (data & (u16)0x01FF);
     while ((uart->SR & USART_SR_TXE) == RESET);
 }
 
@@ -52,5 +52,20 @@ void uart_send_str(USART_TypeDef* uart, char* buffer)
     {
         uart_send_char(uart, *buffer);
         buffer++;
+    }
+}
+
+void uart_send_int(USART_TypeDef* uart, u16 num)
+{
+    char str[10]; /* int로 표현가능한 수의 길이 */
+    u16 i;
+    do
+    {
+        str[i++] = (num % 10) + '0';
+    } while ((num /= 10) > 0);
+
+    while (i)
+    {
+        uart_send_char(uart, str[--i]);
     }
 }
